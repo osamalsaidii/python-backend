@@ -53,16 +53,26 @@ merged_dict = dict1 | dict2
 print("Merged Dictionary (dict1 | dict2):", merged_dict)
 
 
-def find_second_largest(lst):
-    unique = list(set(lst)) 
-    if len(unique) < 2:
-        return None
-    unique.sort()
-    return unique[-2]
+def second_largest_list(list_of_lists):
+    if len(list_of_lists) < 2:
+        return None  
 
-nums = [10, 25, 35, 20, 40, 50, 35, 15]
-second_largest = find_second_largest(nums)
-print("Second Largest Number:", second_largest)
+    first = second = []
+    first_len = second_len = -1
+
+    for lst in list_of_lists:
+        length = len(lst)
+        if length > first_len:
+            second, second_len = first, first_len
+            first, first_len = lst, length
+        elif first_len > length > second_len:
+            second, second_len = lst, length
+
+    return second if second_len != -1 else None
+
+example_lists = [[1, 2], [3, 4, 5], [0], [6, 7, 8, 9], [10, 11, 12]]
+result = second_largest_list(example_lists)
+print("Second largest list:", result)
 
 student_scores1 = {"Alice": 85, "Bob": 78}
 student_scores2 = {"Bob": 90, "Charlie": 88}
