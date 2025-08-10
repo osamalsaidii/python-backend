@@ -25,7 +25,7 @@ print("\n")
 print("Exercise 2: Dictionaries")
 
 student = {
-    "name": "John Doe",
+    "name": "osama alsaidi",
     "age": 21,
     "courses": ["Math", "Science", "History"]
 }
