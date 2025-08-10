@@ -1,0 +1,8 @@
+22: 2
+age22: 3
+alsaidi: 1
+hello: 1
+is: 1
+my: 1
+name: 1
+osama: 3
